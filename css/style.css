@@ -1,0 +1,279 @@
+@font-face {
+    font-family: 'Bebas Neue';
+    src: local('Bebas Neue Regular Regular'), local('BebasNeueRegular'),
+        url('../fonts/BebasNeueRegular.woff2') format('woff2'),
+        url('../fonts/BebasNeueRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box; /* всегда нужен для изменения исчесления размеров*/
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /*шрифт*/
+}
+
+.header {
+    background-color: #635854; /*цвет секции\блока*/
+    padding-top: 12px; /*внутренний верхний отступ*/
+    padding-bottom: 12px; /*внутренний нижный отступ*/
+    border-bottom: 4px solid #3596F5; /*нижняя "рамка" сплошная линия голубого цвета*/
+}
+
+
+.navbar {
+    max-width: 1280px; /*максимальная ширина*/
+    margin: auto; /*отцентровываем по горизонтали*/
+    display: flex; /*делаем элементы гибкими*/
+    justify-content: space-between; /*распологаем элементы по странице на растоянии, каждый к своей стороне по горизонтали(главной оси)*/
+    align-items: center; /*распологаем эелементы по центру поперечной оси*/
+}
+
+.navbar-menu {
+    margin: 0; /*отключаем внешние отступы*/
+    padding: 0; /*отключваем внутренние отступы*/
+    list-style: none; /*отключваем точни у списка*/
+    display: flex; /*делаем элеементы гибкими*/
+    text-align: center; /*выравниваем по центру*/
+}
+
+.navbar-item {
+    margin-left: 40px; /*внешний левый отступ*/
+    margin-right: 40px; /*внешний правый отступ*/
+    text-decoration: none;
+}
+
+.navbar-link {
+    text-decoration: none; /*подчеркивание ссылки(убрали)*/
+    color: white; /*цвет ссылки*/
+    
+}
+
+.navbar-text {
+    display: block;
+}
+
+.navbar-contacts {
+    font-size: 14px;
+    line-height: 16px;
+    text-align: right;
+    color: white;
+    margin-bottom: 4px;
+}
+
+.navbar-phone {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 20px;
+}
+
+.main {
+    display: flex;
+    max-width: 1280px;
+    min-height: 797px;
+    margin: auto;
+    padding-top: 54px;
+}
+
+.main-info {
+    display: flex;
+    flex-direction: column; /*выравниванине по вериткали*/
+    flex-grow: 1; /*чтобы блок занял все место*/
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 166px;
+}
+
+.home-image path {
+    opacity: 0; /*прозрачность*/
+    cursor: pointer; /*курсор пальчик*/
+}
+
+.home-image path:hover {  /*hover псевдокласс с его помощью учтановим прозрачность при наведении на определенный элемент*/  
+    opacity: 1;
+}
+
+.counter {
+    background-color: #fff;
+    font-family: 'Bebas Neue';
+    font-size: 124px;
+    margin-top: 35px;
+    color: #635854;
+    
+}
+
+.counter-group {
+    display: flex;
+    flex-direction: column;
+    align-items:center; /*выравнивание по центру*/
+}
+
+.counter-button {
+    cursor: pointer;
+    background-color: #fff;
+    border: none;
+}
+
+.counter-down {
+    transform: rotateX(180deg);
+}
+
+.button-primary {
+    width: 297px;
+    height: 51px;
+    left: 955px;
+    top: 636px;
+    background: #3596F5;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    padding: 16px 36px;
+    color: white;
+    
+}
+
+.main-title {
+    font-family: Bebas Neue;
+    font-style: normal;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    color: #635854;
+    margin-bottom: 0;
+    font-size: 37px;
+    line-height: 44px;
+}
+
+path.current-floor {
+    opacity: 1;
+}
+
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.2s;
+}
+
+.is-open {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.modal-dialog {
+    max-width: 1000px;
+    min-height: 565px;
+    background-color: #fff;
+    flex-grow: 1;
+    display: flex;
+    position: relative;
+    transform: translateY(-10%);
+    transition: transform 0.2s, opacity 0.2s;
+    transition-delay: 0.2s;
+    opacity: 0;
+}
+
+.is-open > .modal-dialog {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.modal-image {
+    background-color: #EBEBEB;
+    padding: 50px;
+    width: 60%;
+    text-align: center;
+}
+
+.modal-title {
+    font-family: Bebas Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.modal-info {
+    width: 40%;
+    padding: 50px 46px;
+}
+
+.modal-alert {
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #635854;
+    margin-top: 56px;
+}
+
+span.modal-counter {
+    font-family: Bebas Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+    background-color: #EBEBEB;
+}
+
+.modal-close-button {
+    position: absolute;
+    cursor: pointer;
+    border: none;
+    background-color: #fff;
+    right: 27px;
+    top: 38px;
+}
+
+.flat-list {
+    padding: 0;
+    list-style: none;
+    margin-top: 55px;
+}
+
+.flat-link {
+    font-family: Roboto;
+    font-size: 16px;
+    line-height: 19px;
+    color: #635854;
+    text-decoration: none;
+}
+.flat-link:hover {
+    text-decoration: underline;
+    color: #3596F5;
+}
+
+.flat-item {
+    margin-bottom: 10px;
+}
+
+.flats path {
+    cursor: pointer;
+    opacity: 0;
+}
+
+.flats path:hover {
+    opacity: 1;
+}
+
+
